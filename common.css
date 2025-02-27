@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Avenir, 'Segoe UI', 'Lucida Grande', Lucida, Verdana, sans-serif;
+}
+
+div, a, p{
+    background-color: transparent;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color:#e7e7e7;
+    font-size: 1.5em;
+    white-space: nowrap;
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    padding: 10px 20px;
+    text-align: right;
+}
+
+@media (prefers-color-scheme: dark) {
+    * {
+        color:#f1f1f1;
+        background-color:#494949;
+    }
+
+    .navbar, .footer{
+        background-color:#2e2e2e;
+    }
+}
