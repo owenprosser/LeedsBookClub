@@ -8,6 +8,20 @@
 
 body {
     font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+h1{
+    font-size: 20pt;
+}
+
+h2{
+    font-size: 15pt;
+}
+
+p{
+    width: 30vw;
+    padding-top: 5px;
 }
 
 .footer {
@@ -17,6 +31,7 @@ body {
     padding: 10px 20px;
     text-align: right;
     background-color:#e7e7e7;
+    position: absolute;
 }
 
 .navbar {
@@ -30,7 +45,8 @@ body {
     font-size: 1.5rem;
 }
 .navbar .title {
-    font-size: 2rem;
+    font-size: 20px;
+    white-space: nowrap;
     font-weight: bold;
     font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
 }
@@ -39,24 +55,33 @@ body {
     font-size: 1.5rem;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
-    padding: 20px;
-    background-color:#f2f2f2;
-}
-
-.grid-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    opacity: 1;
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-}
-
 img:hover
 {
     opacity: .9;
+}
+
+.main {
+    display: flex;
+    align-items: center;  /* Vertically aligns content */
+    justify-content: center;
+    gap: 20px;  /* Adds space between image and text */
+    padding: 20px;
+}
+
+.image {
+    height: 75vh; /* Adjust the image size */
+}
+
+@media (prefers-color-scheme: dark) {
+    * {
+        color:#f1f1f1;
+    }
+
+    .navbar, .footer{
+        background-color:#2e2e2e;
+    }
+
+    .main, body{
+        background-color:#494949;
+    }
 }
