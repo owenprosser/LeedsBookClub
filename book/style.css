@@ -3,25 +3,19 @@
     padding: 0;
     box-sizing: border-box;
     color: #333;
-    font: 11pt Avenir, 'Segoe UI', 'Lucida Grande', Lucida, Verdana, sans-serif;
+    text-decoration: none;
+    font-family: Avenir, 'Segoe UI', 'Lucida Grande', Lucida, Verdana, sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
     background-color: #f2f2f2;
-}
-
-h1{
-    font-size: 20pt;
-}
-
-h2{
-    font-size: 15pt;
 }
 
 p{
     width: 30vw;
     padding-top: 5px;
+    text-justify: inter-word;
+    text-align: justify;
 }
 
 .footer {
@@ -40,24 +34,8 @@ p{
     justify-content: space-between;
     padding: 15px 20px;
     background-color:#e7e7e7;
-}
-.navbar .logo {
-    font-size: 1.5rem;
-}
-.navbar .title {
-    font-size: 20px;
+    font-size: 1.5em;
     white-space: nowrap;
-    font-weight: bold;
-    font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
-}
-.navbar a {
-    text-decoration: none;
-    font-size: 1.5rem;
-}
-
-img:hover
-{
-    opacity: .9;
 }
 
 .main {
@@ -70,6 +48,15 @@ img:hover
 
 .image {
     height: 75vh; /* Adjust the image size */
+}
+
+@media only screen and (max-width: 950px) {
+    .image {
+        width: 0;
+    }
+    .text, p{
+        width: 100%;
+    }
 }
 
 @media (prefers-color-scheme: dark) {

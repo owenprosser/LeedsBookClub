@@ -9,7 +9,9 @@ function reverseChildren() {
 function itemClicked(){
     if(isInViewport(this) || spansViewport(this))
     {
-
+        var id = this.src.split("/")[4].split(".")[0];
+        console.log("/book/#"+id);
+        window.location.href = "/book/#"+id;
     }
     else
     {

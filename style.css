@@ -3,20 +3,18 @@
     padding: 0;
     box-sizing: border-box;
     color: #333;
-    font: 11pt Avenir, 'Segoe UI', 'Lucida Grande', Lucida, Verdana, sans-serif;
-}
-
-body {
-    font-family: Arial, sans-serif;
+    text-decoration: none;
+    font-family: Avenir, 'Segoe UI', 'Lucida Grande', Lucida, Verdana, sans-serif;
 }
 
 .footer {
     bottom: 0;
     left: 0;
     width: 100%;
+    text-align: center;
     padding: 10px 20px;
-    text-align: right;
     background-color:#e7e7e7;
+    text-align: right;
 }
 
 .navbar {
@@ -25,19 +23,8 @@ body {
     justify-content: space-between;
     padding: 15px 20px;
     background-color:#e7e7e7;
-}
-.navbar .logo {
-    font-size: 1.5rem;
-}
-.navbar .title {
-    font-size: 20px;
+    font-size: 1.5em;
     white-space: nowrap;
-    font-weight: bold;
-    font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
-}
-.navbar a {
-    text-decoration: none;
-    font-size: 1.5rem;
 }
 
 .grid-container {

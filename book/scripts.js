@@ -1,71 +1,26 @@
-function reverseChildren() {
-    var parent = document.getElementById("books-grid");
-    for (var i = 1; i < parent.childNodes.length; i++){
-        parent.insertBefore(parent.childNodes[i], parent.firstChild);
-    }
-    window.scrollTo(0, 0);
-}
-
-function itemClicked(){
-    if(isInViewport(this) || spansViewport(this))
-    {
-
-    }
-    else
-    {
-        this.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-}
-
 window.addEventListener('load', function() {
-        var request = new XMLHttpRequest();
-        request.open("GET","data.json", false);
-        request.send(null);
-        var jsonData = JSON.parse(request.responseText);
+    var request = new XMLHttpRequest();
+    request.open("GET","https://leedsbook.club/data.json", false);
+    request.send(null);
+    var jsonData = JSON.parse(request.responseText);
+    console.log("LOAD");
+    reloadContent(jsonData);
+})
 
-        reloadContent(jsonData, true);
-    })
-
-function reloadContent(jsonData, reverseOrder)
+function reloadContent(jsonData)
 {
-    var parentDiv = document.getElementById("books-grid");
+    var img = document.getElementById("image");
+    var author = document.getElementById("author");
+    var title = document.getElementById("title");
+    var synopsis = document.getElementById("synopsis");
+    var selector_date = document.getElementById("selector-date");
 
-    if(reverseOrder)
-    {
-        jsonData.books = jsonData.books.reverse();
-    }
+    var bookIndex = +window.location.hash.substr(1);
+    bookIndex -= 1;
 
-    for (var bookIndex = 0; bookIndex < jsonData.books.length; bookIndex++)
-    {
-        var image = this.document.createElement("img");
-        image.addEventListener("click", itemClicked, false);
-        image.className = "books-grid"
-        image.src = jsonData.books[bookIndex].image_url;
-        parentDiv.append(image);
-    }
-}
-
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-
-function spansViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right >= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-
-function closeDetail(){
-    var item = document.getElementById('detailPopup');
-    item.style.display = "none";
+    img.src =  "../" + jsonData.books[bookIndex].image_url;
+    author.textContent = jsonData.books[bookIndex].author;
+    title.textContent = jsonData.books[bookIndex].title;
+    synopsis.textContent = jsonData.books[bookIndex].synopsis;
+    selector_date.textContent = jsonData.books[bookIndex].selector + " - " + jsonData.books[bookIndex].date;
 }
