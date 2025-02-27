@@ -4,6 +4,8 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: Avenir, 'Segoe UI', 'Lucida Grande', Lucida, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
 }
 
 div, a, p{
@@ -25,6 +27,7 @@ div, a, p{
     width: 100%;
     padding: 10px 20px;
     text-align: right;
+    background-color:#e7e7e7;
 }
 
 @media (prefers-color-scheme: dark) {
