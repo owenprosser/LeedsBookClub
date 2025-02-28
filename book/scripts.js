@@ -1,9 +1,8 @@
 window.addEventListener('load', function() {
     var request = new XMLHttpRequest();
-    request.open("GET","https://leedsbook.club/data.json", false);
+    request.open("GET","../data.json", false);
     request.send(null);
     var jsonData = JSON.parse(request.responseText);
-    console.log("LOAD");
     reloadContent(jsonData);
 })
 

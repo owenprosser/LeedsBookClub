@@ -1,24 +1,3 @@
-function reverseChildren() {
-    var parent = document.getElementById("books-grid");
-    for (var i = 1; i < parent.childNodes.length; i++){
-        parent.insertBefore(parent.childNodes[i], parent.firstChild);
-    }
-    window.scrollTo(0, 0);
-}
-
-function itemClicked(){
-    if(isInViewport(this) || spansViewport(this))
-    {
-        var id = this.src.split("/")[4].split(".")[0];
-        console.log("/book/#"+id);
-        window.location.href = "/book/#"+id;
-    }
-    else
-    {
-        this.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-}
-
 window.addEventListener('load', function() {
         var request = new XMLHttpRequest();
         request.open("GET","data.json", false);
@@ -44,6 +23,21 @@ function reloadContent(jsonData, reverseOrder)
         image.className = "books-grid"
         image.src = jsonData.books[bookIndex].image_url;
         parentDiv.append(image);
+    }
+
+    secretFunc();
+}
+
+function itemClicked(){
+    if(isInViewport(this) || spansViewport(this))
+    {
+        var id = this.src.split("/")[4].split(".")[0];
+        console.log("/book/#"+id);
+        window.location.href = "/book/#"+id;
+    }
+    else
+    {
+        this.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 }
 
