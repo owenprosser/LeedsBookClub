@@ -18,7 +18,9 @@ p{
 }
 
 .image {
-    height: 75vh; /* Adjust the image size */
+    height: 75vh;
+    box-shadow: 0 2px 10px #00000099;
+    border-radius: 5px;
 }
 
 @media only screen and (max-width: 950px) {
