@@ -23,7 +23,7 @@ function secretFunc(){ //No peeking!
             link.textContent = "🦘";
             link.title = "Happy leap day!"
             break;
-        case("0103"):
+        case("0203"):
             link.textContent = "🏴󠁧󠁢󠁷󠁬󠁳󠁿";
             link.title = "Dydd Gŵyl Dewi Sant Hapus!"
             break;
@@ -67,6 +67,7 @@ function secretFunc(){ //No peeking!
         case("0511"):
             link.textContent = "🎆";
             link.title = "BANG! BOOM!"
+            start_fireworks();
             break;
         case("3011"):
             link.textContent = "🏴󠁧󠁢󠁳󠁣󠁴󠁿";
@@ -80,6 +81,15 @@ function secretFunc(){ //No peeking!
         case("3112"):
             link.textContent = "🍾";
             link.title = "Happy new year!"
+            start_fireworks();
             break;
     }
+
+function start_fireworks(){
+    var canvas = document.createElement('canvas');
+    var container = document.getElementById('books-grid')
+    container.appendChild(canvas);
+    const fireworks = new Fireworks.default(canvas);
+    fireworks.start();
+}
 }

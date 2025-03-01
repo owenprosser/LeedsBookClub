@@ -34,6 +34,18 @@ div, a, p{
     font-size: 1.5em;
 }
 
+canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: transparent;
+    pointer-events: none;
+}
+
 @media (prefers-color-scheme: dark) {
     * {
         color:#f1f1f1;
