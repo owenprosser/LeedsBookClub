@@ -111,3 +111,11 @@ function dateSytem(){
             break;
     }
 }
+
+function start_fireworks(){
+    var canvas = document.createElement('canvas');
+    var container = document.getElementById('books-grid')
+    container.appendChild(canvas);
+    const fireworks = new Fireworks.default(canvas);
+    fireworks.start();
+}
