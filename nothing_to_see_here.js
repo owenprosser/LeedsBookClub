@@ -23,7 +23,7 @@ function secretFunc(){ //No peeking!
             link.textContent = "🦘";
             link.title = "Happy leap day!"
             break;
-        case("0203"):
+        case("0103"):
             link.textContent = "🏴󠁧󠁢󠁷󠁬󠁳󠁿";
             link.title = "Dydd Gŵyl Dewi Sant Hapus!"
             break;
