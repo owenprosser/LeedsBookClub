@@ -1,6 +1,5 @@
 window.addEventListener('load', function() {
     var paramFound = paramCheck();
-    
     if(!paramFound){
         dateSytem();
     }
@@ -17,7 +16,6 @@ function start_fireworks(){
 function paramCheck(){
     var paramFound = false;
     var param = window.location.hash.substr(1);
-    console.log(param);
 
     if(param == 'fw' || param == "fireworks")
     {
