@@ -8,7 +8,8 @@ window.addEventListener('load', function() {
     })
 
 let bounds;
-var book = null;    
+var book = null;
+var glowDiv = null;
 document.addEventListener('mousemove', e => {
     if(book != null){
         bounds = book.getBoundingClientRect();
@@ -17,7 +18,6 @@ document.addEventListener('mousemove', e => {
     }, {passive: true})
 
 function rotateToMouse(e) {
-    console.log("rotate");
     const mouseX = e.clientX;
     const mouseY = e.clientY;
     const leftX = mouseX - bounds.x;
@@ -29,7 +29,7 @@ function rotateToMouse(e) {
     const distance = Math.sqrt(center.x ** 2 + center.y ** 2);
 
     book.style.transform = `
-        scale3d(1.03, 1.03, 1.03)
+        scale3d(1.07, 1.07, 1.07)
         rotate3d(
         ${center.y / 100},
         ${-center.x / 100},
@@ -37,7 +37,7 @@ function rotateToMouse(e) {
         ${Math.log(distance) * 2}deg
         )`;
 
-    book.style.backgroundImage = `
+    glowDiv.style.backgroundImage = `
         radial-gradient(
         circle at
         ${center.x * 2 + bounds.width / 2}px
@@ -58,34 +58,46 @@ function reloadContent(jsonData, reverseOrder)
 
     for (var bookIndex = 0; bookIndex < jsonData.books.length; bookIndex++)
     {
-        var image = this.document.createElement("img");
-        image.addEventListener("click", itemClicked, false);
-        image.className = "book"
-        //image.src = jsonData.books[bookIndex].image_url;
+        var card = this.document.createElement("div");
+        card.addEventListener("click", itemClicked, false);
+        card.className = "book"
+        card.style.backgroundImage = "url("+jsonData.books[bookIndex].image_url+")";
         var id = jsonData.books[bookIndex].image_url.split('/')[1].split('.')[0];
-        image.id = id;
+        card.id = id;
 
-        image.addEventListener('mousemove', e => {
+        glowDiv = document.createElement('div');
+        card.addEventListener("click", itemClicked, false);
+        glowDiv.className = "glow";
+        glowDiv.id = id;
+        card.append(glowDiv);
+
+        card.addEventListener('mousemove', e => {
             var element = document.elementFromPoint(e.clientX, e.clientY);
             if(element.className == 'book'){
                 this.book = element;
+                this.glowDiv = book.children[0];
+            }
+            if(element.className == 'glow'){
+                this.glowDiv = element;
+                this.book = element.parentNode;
             }
           }, {passive: true});
-        image.addEventListener('mouseleave', leave);
+          card.addEventListener('mouseleave', leave);
 
-        parentDiv.append(image);
+        parentDiv.append(card);
     }
 }
 
 function leave(){
-    if(book != null){
+    if(book != null && glowDiv != null){
         book.style.transform = '';
-        book.style.backgroundImage = '';
+        glowDiv.style.backgroundImage = '';
     }
     book = null;
 }
 
 function itemClicked(){
+    console.log("click");
     if(isInViewport(this) || spansViewport(this))
     {
         var id = this.src.split("/")[4].split(".")[0];

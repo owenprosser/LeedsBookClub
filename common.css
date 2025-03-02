@@ -4,12 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: Avenir, 'Segoe UI', 'Lucida Grande', Lucida, Verdana, sans-serif;
-    background-color: #f2f2f2;
     color: #333;
-}
-
-div, a, p{
-    background-color: transparent;
 }
     
 
@@ -50,6 +45,9 @@ canvas{
 @media (prefers-color-scheme: dark) {
     * {
         color:#f1f1f1;
+    }
+
+    .container, body{
         background-color:#494949;
     }
 
