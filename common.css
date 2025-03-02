@@ -45,6 +45,13 @@ canvas{
     pointer-events: none;
 }
 
+hr{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    margin: 10px 0 10px 0;
+}
+
 @media (prefers-color-scheme: dark) {
     * {
         color:#f1f1f1;
@@ -56,5 +63,9 @@ canvas{
 
     .navbar, .footer{
         background-color:#2e2e2e;
+    }
+
+    hr{
+        background-image: linear-gradient(to right, #494949, #f1f1f1, #494949);
     }
 }
