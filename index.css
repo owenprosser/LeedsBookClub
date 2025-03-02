@@ -1,6 +1,6 @@
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(286px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(286px, 1fr));
     gap: 0px;
     margin-bottom: 20px;
 }
@@ -21,21 +21,62 @@
     transform: rotate3d(0);
   }
   
-  .book:hover {
-    transition-duration: 150ms;
-    box-shadow: 0 5px 20px 5px #00000044;
-  }
-  
-  .book .glow {
-    border-radius: 5px;
-    width: 100%;
-    height: 100%;
-    
-    background-image: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
-    }
-
-@media only screen and (max-width: 852px) {
-    .container {
-        display: inline;
-    }
+.book:hover {
+  transition-duration: 150ms;
+  box-shadow: 0 5px 20px 5px #00000044;
 }
+  
+.book .glow {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+
+  background-image: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
+}
+
+/* iPad Pro 11 - Portrait */ 
+@media only screen and (min-device-width: 834px)
+ and (orientation: portrait) { 
+  .container{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .book{
+    width:240px;
+    height: 369px;
+  }
+}
+
+/* iPad slider-over */
+@media only screen and (max-width: 375px) {
+  .container {
+    display: inline;
+  }
+}
+
+/* iPad split-view 1/2 */
+@media only screen and (max-width: 592px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* iPad split-view 2/2 */
+@media only screen and (max-width: 809px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* iPhone 16 Pro */
+@media only screen and (-webkit-min-device-pixel-ratio: 3), 
+       only screen and (-min--moz-device-pixel-ratio: 3), 
+       only screen and (-o-min-device-pixel-ratio: 3/1), 
+       only screen and (min-device-pixel-ratio: 3){
+         .container{
+          grid-template-columns: repeat(2, 1fr);
+         } 
+         .book{
+          width: 170px;
+          height: 261px;
+         }
+  }
