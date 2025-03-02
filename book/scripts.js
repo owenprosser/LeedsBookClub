@@ -12,7 +12,8 @@ function reloadContent(jsonData)
     var author = document.getElementById("author");
     var title = document.getElementById("title");
     var synopsis = document.getElementById("synopsis");
-    var selector_date = document.getElementById("selector-date");
+    var selector = document.getElementById("selector");
+    var date = document.getElementById("date");
 
     var bookIndex = window.location.hash.substr(1);
     bookIndex -= 1;
@@ -21,5 +22,6 @@ function reloadContent(jsonData)
     author.textContent = jsonData.books[bookIndex].author;
     title.textContent = jsonData.books[bookIndex].title;
     synopsis.textContent = jsonData.books[bookIndex].synopsis;
-    selector_date.textContent = jsonData.books[bookIndex].selector + " - " + jsonData.books[bookIndex].date;
+    selector.textContent = jsonData.books[bookIndex].selector;
+    date.textContent = jsonData.books[bookIndex].date;
 }

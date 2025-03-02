@@ -3,18 +3,18 @@ p{
     text-align: justify;
 }
 
-.container {
-    display: flex;
-    align-items: center;  /* Vertically aligns content */
-    justify-content: center;
-    gap: 20px;  /* Adds space between image and text */
-    padding: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
+.text{
+    width: 100%;
 }
 
-.footer{
-    position: absolute;
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+
+    gap: 20px;
+    padding: 20px;
 }
 
 .image {
@@ -23,14 +23,28 @@ p{
     border-radius: 5px;
 }
 
+footer{
+    position: absolute;
+    bottom: 0;
+}
+
+.selector-date{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 @media only screen and (max-width: 950px) {
-    .image {
-        width: 0;
-    }
-    .text, p{
-        width: 100%;
-    }
     .container{
-        margin: 0;
+        flex-direction: column-reverse;
+    }
+
+    .selector-date{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    footer{
+        position: relative;
     }
 }
