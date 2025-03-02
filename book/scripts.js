@@ -14,7 +14,7 @@ function reloadContent(jsonData)
     var synopsis = document.getElementById("synopsis");
     var selector_date = document.getElementById("selector-date");
 
-    var bookIndex = +window.location.hash.substr(1);
+    var bookIndex = window.location.hash.substr(1);
     bookIndex -= 1;
 
     img.src =  "../" + jsonData.books[bookIndex].image_url;

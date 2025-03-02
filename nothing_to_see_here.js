@@ -1,8 +1,34 @@
 window.addEventListener('load', function() {
-    secretFunc();
+    var paramFound = paramCheck();
+    
+    if(!paramFound){
+        dateSytem();
+    }
 })
 
-function secretFunc(){ //No peeking!
+function start_fireworks(){
+    var canvas = document.createElement('canvas');
+    var container = document.getElementById('books-grid')
+    container.appendChild(canvas);
+    const fireworks = new Fireworks.default(canvas);
+    fireworks.start();
+}
+
+function paramCheck(){
+    var paramFound = false;
+    var param = window.location.hash.substr(1);
+    console.log(param);
+
+    if(param == 'fw' || param == "fireworks")
+    {
+        paramFound = true;
+        start_fireworks();
+    }
+
+    return paramFound;
+}
+
+function dateSytem(){
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -84,6 +110,7 @@ function secretFunc(){ //No peeking!
             start_fireworks();
             break;
     }
+}
 
 function start_fireworks(){
     var canvas = document.createElement('canvas');
@@ -91,5 +118,4 @@ function start_fireworks(){
     container.appendChild(canvas);
     const fireworks = new Fireworks.default(canvas);
     fireworks.start();
-}
 }

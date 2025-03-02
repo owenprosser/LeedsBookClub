@@ -20,7 +20,7 @@ function reloadContent(jsonData, reverseOrder)
     {
         var image = this.document.createElement("img");
         image.addEventListener("click", itemClicked, false);
-        image.className = "books-grid"
+        image.className = "book"
         image.src = jsonData.books[bookIndex].image_url;
         parentDiv.append(image);
     }
