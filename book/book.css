@@ -1,4 +1,4 @@
-p{
+h1, h2, p{
     text-justify: inter-word;
     text-align: justify;
 }
@@ -14,7 +14,7 @@ p{
     flex-direction: row-reverse;
 
     gap: 20px;
-    padding: 20px;
+    padding: 20px 150px 0 150px;
 }
 
 .image {
@@ -37,6 +37,7 @@ footer{
 @media only screen and (max-width: 950px) {
     .container{
         flex-direction: column-reverse;
+        padding: 20px;
     }
 
     .selector-date{
