@@ -7,11 +7,29 @@ window.addEventListener('load', function() {
         reloadContent(jsonData, true);
     })
 
+function isDesktop() {
+    let isMobile = '';
+    
+    if (navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)) {
+        isMobile = true;
+    } 
+    else {
+        isMobile = false;
+    }
+    return isMobile;
+}
+
 let bounds;
 var book = null;
 var glowDiv = null;
 document.addEventListener('mousemove', e => {
-    if(book != null){
+    if(book != null && !isDesktop()){
         bounds = book.getBoundingClientRect();
         rotateToMouse(e)
     }
