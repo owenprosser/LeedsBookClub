@@ -98,9 +98,11 @@ function leave(){
 
 function itemClicked(){
     console.log("click");
+    console.log("is in: "+isInViewport(this));
+    console.log("spans: "+spansViewport(this));
     if(isInViewport(this) || spansViewport(this))
     {
-        var id = this.src.split("/")[4].split(".")[0];
+        var id = this.id;
         console.log("/book/#"+id);
         window.location.href = "/book/#"+id;
     }
