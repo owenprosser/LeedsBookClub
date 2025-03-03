@@ -21,6 +21,9 @@ h1, h2, p{
     height: 75vh;
     box-shadow: 0 2px 10px #00000099;
     border-radius: 5px;
+    max-width: 50%;
+    width: auto;
+    height: auto;
 }
 
 footer{
