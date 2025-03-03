@@ -2,7 +2,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(286px, 1fr));
     gap: 0px;
-    margin-bottom: 20px;
+    margin: 10px;
+    gap: 10px;
 }
 
 .book {    
@@ -66,6 +67,20 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* iPhone 11 */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), 
+       only screen and (-min--moz-device-pixel-ratio: 2), 
+       only screen and (-o-min-device-pixel-ratio: 2/1), 
+       only screen and (min-device-pixel-ratio: 2){
+         .container{
+          grid-template-columns: repeat(2, 1fr);
+         } 
+         .book{
+          width: 170px;
+          height: 261px;
+         }
+  }
 
 /* iPhone 16 Pro */
 @media only screen and (-webkit-min-device-pixel-ratio: 3), 
