@@ -45,6 +45,7 @@
   /* phones */
   .container{
     gap: 0;
+    grid-template-columns: auto auto;
   }
   .book{
     width: 130px;
