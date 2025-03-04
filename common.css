@@ -22,7 +22,9 @@
 }
 
 .logo, .icon{
-    height: 1.5em;
+   height: auto;
+   width: auto;
+   max-height: 30px;
 }
 
 .footer {
