@@ -71,7 +71,11 @@ footer{
 
     .person_details{
         display: flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
+    }
+
+    #selector, #date{
+        padding-top: 7px;
     }
 
     .headshot{
@@ -79,7 +83,7 @@ footer{
         width: auto;
         max-width: 30px;
         margin-top: 0px;
-        margin-left: 5px;
+        margin-right: 10px;
         -webkit-filter: drop-shadow(1px 1px 1px #00000099);
         filter: drop-shadow(1px 1px 1px #00000099);
     }
