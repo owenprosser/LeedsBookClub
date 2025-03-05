@@ -18,7 +18,8 @@ function reloadContent(jsonData)
     var title = document.getElementById("title");
     var synopsis = document.getElementById("synopsis");
     var selector = document.getElementById("selector");
-    var date = document.getElementById("date");  
+    var date = document.getElementById("date");
+    var head = document.getElementById("head");
 
     if(bookIndex < bookCount)
     {
@@ -28,6 +29,7 @@ function reloadContent(jsonData)
         synopsis.textContent = jsonData.books[bookIndex].synopsis;
         selector.textContent = jsonData.books[bookIndex].selector;
         date.textContent = jsonData.books[bookIndex].date;
+        head.src = ("/members/headshots/" + jsonData.books[bookIndex].selector + ".png").toLowerCase().replace(" #","");
     }
     else
     {
@@ -37,5 +39,6 @@ function reloadContent(jsonData)
         synopsis.textContent = "Check URL ID";
         selector.textContent = "";
         date.textContent = "";
+        head.src = "/members/headshots/default.png"
     }
 }

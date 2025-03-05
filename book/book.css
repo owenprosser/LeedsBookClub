@@ -33,8 +33,21 @@ footer{
 
 .selector-date{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.person_details{
+    display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
+}
+
+.headshot{
+    height: auto;
+    width: auto;
+    max-width: 30px;
+    margin-top: 5px;
 }
 
 @media only screen and (max-width: 950px) {
@@ -51,7 +64,23 @@ footer{
     footer{
         position: relative;
     }
+
     .image{
         max-width: 100%;
+    }
+
+    .person_details{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .headshot{
+        height: auto;
+        width: auto;
+        max-width: 30px;
+        margin-top: 0px;
+        margin-left: 5px;
+        -webkit-filter: drop-shadow(1px 1px 1px #00000099);
+        filter: drop-shadow(1px 1px 1px #00000099);
     }
 }
