@@ -47,7 +47,7 @@ footer{
     height: auto;
     width: auto;
     max-width: 30px;
-    margin-left: 5px;
+    margin-top: 5px;
 }
 
 @media only screen and (max-width: 950px) {
@@ -72,5 +72,13 @@ footer{
     .person_details{
         display: flex;
         flex-direction: row;
+    }
+
+    .headshot{
+        height: auto;
+        width: auto;
+        max-width: 30px;
+        margin-top: 0px;
+        margin-left: 5px;
     }
 }
