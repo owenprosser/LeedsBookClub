@@ -1,8 +1,42 @@
+.current_container{
+  display: flex;
+  background-image: url('/covers/34.jpg');
+  background-position: center center;
+}
+
+.current{
+  margin: auto;
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.current_read_info{
+  display: flex;
+}
+
+h1, h2, h2, h3{
+  color: #4b4b4b;
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(286px, 1fr));
     margin: 10px;
+    margin-top: 0;
     gap: 10px;
+}
+
+img{
+  width: auto;
+  height: auto;
+  max-height: 300px;
+  border-radius: 3px;
 }
 
 .book {    

@@ -74,7 +74,7 @@ function reloadContent(jsonData, reverseOrder)
         jsonData.books = jsonData.books.reverse();
     }
 
-    for (var bookIndex = 0; bookIndex < jsonData.books.length; bookIndex++)
+    for (var bookIndex = 1; bookIndex < jsonData.books.length; bookIndex++)
     {
         var card = this.document.createElement("div");
         card.addEventListener("click", itemClicked, false);
