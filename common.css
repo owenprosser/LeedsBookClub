@@ -7,6 +7,10 @@
     color: #4b4b4b;
 }
 
+h1{
+    font-size: 1.5em;
+}
+
 .container, body{
     background-color:#f2f2f2;
 }
@@ -19,6 +23,7 @@
     background-color:#e7e7e7;
     font-size: 1.5em;
     white-space: nowrap;
+    z-index: 1;
 }
 
 .logo, .icon{
@@ -60,6 +65,24 @@ hr{
     margin: 10px 0 10px 0;
 }
 
+.glass{
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.headshot{
+    height: auto;
+    width: auto;
+    max-width: 30px;
+    margin-top: 5px;
+    -webkit-filter: drop-shadow(1px 1px 1px #00000099);
+    filter: drop-shadow(1px 1px 1px #00000099);
+}
+
 @media (prefers-color-scheme: dark) {
     * {
         color:#f1f1f1;
@@ -75,5 +98,9 @@ hr{
 
     hr{
         background-image: linear-gradient(to right, #494949, #f1f1f1, #494949);
+    }
+
+    .glass{
+        background: rgba(73, 73, 73, 0.5);
     }
 }

@@ -74,7 +74,22 @@ function reloadContent(jsonData, reverseOrder)
         jsonData.books = jsonData.books.reverse();
     }
 
-    for (var bookIndex = 0; bookIndex < jsonData.books.length; bookIndex++)
+    var current_cover = document.getElementById('current_cover');
+    var current_background = document.getElementById('current_background');
+    var current_title = document.getElementById('current_title');
+    var current_author = document.getElementById('current_author');
+    var current_headshot = document.getElementById('current_headshot');
+
+    current_cover.src = jsonData.books[0].image_url;
+    current_background.style.backgroundImage = "url("+jsonData.books[0].image_url+")";
+    current_title.textContent = jsonData.books[0].title;
+    current_author.textContent = "by "+jsonData.books[0].author;
+    current_headshot.src = ("/members/headshots/" + jsonData.books[0].selector + ".png").toLowerCase().replace(" #","");
+    current_headshot.title = jsonData.books[0].date + " chosen by " + jsonData.books[0].selector;
+    current_cover.id = jsonData.books.length;
+    current_cover.addEventListener("click", itemClicked, false);
+
+    for (var bookIndex = 1; bookIndex < jsonData.books.length; bookIndex++)
     {
         var card = this.document.createElement("div");
         card.addEventListener("click", itemClicked, false);

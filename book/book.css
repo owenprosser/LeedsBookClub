@@ -12,9 +12,7 @@ h1, h2, p{
     align-items: center;
     justify-content: center;
     flex-direction: row-reverse;
-
     gap: 20px;
-    padding: 20px 150px 0 150px;
 }
 
 .image {
@@ -41,13 +39,6 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.headshot{
-    height: auto;
-    width: auto;
-    max-width: 30px;
-    margin-top: 5px;
 }
 
 @media only screen and (max-width: 950px) {
@@ -84,7 +75,5 @@ footer{
         max-width: 30px;
         margin-top: 0px;
         margin-right: 10px;
-        -webkit-filter: drop-shadow(1px 1px 1px #00000099);
-        filter: drop-shadow(1px 1px 1px #00000099);
     }
 }
