@@ -16,7 +16,6 @@ function reloadContent(jsonData)
     var img = document.getElementById("image");
     var author = document.getElementById("author");
     var title = document.getElementById("title");
-    var synopsis = document.getElementById("synopsis");
     var selector = document.getElementById("selector");
     var date = document.getElementById("date");
     var head = document.getElementById("head");
@@ -26,10 +25,20 @@ function reloadContent(jsonData)
         img.src =  "../" + jsonData.books[bookIndex].image_url;
         author.textContent = jsonData.books[bookIndex].author;
         title.textContent = jsonData.books[bookIndex].title;
-        synopsis.textContent = jsonData.books[bookIndex].synopsis;
         selector.textContent = jsonData.books[bookIndex].selector;
         date.textContent = jsonData.books[bookIndex].date;
         head.src = ("/members/headshots/" + jsonData.books[bookIndex].selector + ".png").toLowerCase().replace(" #","");
+    
+        var synopsis = document.getElementById("synopsis");
+        var synopsis_strings = jsonData.books[bookIndex].synopsis.split('\n');
+        
+        for(var paragraphs_count = 0; paragraphs_count < synopsis_strings.length; paragraphs_count++)
+        {
+            var paragraph = document.createElement('p');
+            paragraph.textContent = synopsis_strings[paragraphs_count];
+            synopsis.appendChild(paragraph);
+            synopsis.appendChild(document.createElement('br'));
+        }
     }
     else
     {
